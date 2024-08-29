@@ -1,9 +1,5 @@
 package server
 
-import (
-	"log"
-	"net/http"
-)
-
-func addRoutes(mux *http.ServeMux, logger *log.Logger) {
+func (s *CronServer) addRoutes() {
+	s.srv.POST("/cron", s.addCron)
 }
